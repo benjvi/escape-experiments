@@ -1,0 +1,22 @@
+name: benjvi/kubernetes-provider
+version: 1.0.@
+
+includes:
+- kubernetes.tf
+- terraform.tfstate
+
+provides:
+- kubernetes
+
+outputs:
+- cluster_name
+- cluster_zone
+- cluster_api_url
+- cluster_ca_certificate
+- username
+- password
+- client_certificate
+- client_key
+
+build: deploy.sh
+deploy: deploy.sh

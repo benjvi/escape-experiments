@@ -1,0 +1,6 @@
+- terraform.tfstate is getting copied on deploy - this is really going to mess things up - need to put state somewhere external
+- need to follow exactly the steps here to get things to work: https://escape.ankyra.io/docs/quickstart/providers-and-consumers/
+- releases go to inventory, envionments get put in state
+- need to share state between providers + consumers to get things to work
+- when you deploy by default it uses the current (unreleased) version which sounds right but you then can't consume that anywhere. You need to add -latest to the provider name when you deploy to deploy the latest *released* version
+- both build and deploy steps are required to output values that the provider provides to consumers. Makes sense to have the option to provide default values from the build step, but surely they should be optional

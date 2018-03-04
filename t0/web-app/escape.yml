@@ -1,0 +1,33 @@
+name: benjvi/snap-hello-world
+version: 0.0.@
+description: Simple Haskell Web App 
+logo: 
+
+includes:
+- web-app.cabal
+- src 
+
+build: build.sh 
+
+consumes:
+- kubernetes 
+
+inputs:
+- id: cluster_name
+  default: $kubernetes.outputs.cluster_name
+- id: cluster_zone
+  default: $kubernetes.outputs.cluster_zone
+- id: cluster_api_url
+  default: $kubernetes.outputs.cluster_api_url
+- id: cluster_ca_certificate
+  default: $kubernetes.outputs.cluster_ca_certificate
+- id: username
+  default: $kubernetes.outputs.username
+- id: password
+  default: $kubernetes.outputs.password
+- id: client_certificate
+  default: $kubernetes.outputs.client_certificate
+- id: client_key
+  default: $kubernetes.outputs.client_key
+
+deploy: deploy.sh

@@ -1,0 +1,12 @@
+.terraform
+*.tfvars
+*.tfstate*
+escape_state.json
+.escape
+.ghci
+dist
+deps
+st.json
+client_key
+client_cert
+*.ca.crt
